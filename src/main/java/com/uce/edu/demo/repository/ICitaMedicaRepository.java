@@ -10,6 +10,8 @@ import com.uce.edu.demo.repository.modelo.CitaSencilla;
 public interface ICitaMedicaRepository {
 	public void insertar(CitaMedica citaMedica);
 	public void actualizar(CitaMedica citaMedica);
+	public CitaMedica buscar(Integer id);
+	public void eliminar(Integer id);
 	public CitaMedica buscarPorNumero(String numero);
 	public List<CitaSencilla> buscarPorFechaCosto(LocalDateTime fecha,BigDecimal costo);
 }

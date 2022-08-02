@@ -39,10 +39,10 @@ public class Paciente {
 	private String codigoIess;
 	@Column(name = "paci_estatura")
 
-	private String estatura;
+	private Double estatura;
 	@Column(name = "paci_peso")
 
-	private String peso;
+	private Double peso;
 	@Column(name = "paci_genero")
 
 	private String genero;
@@ -85,18 +85,7 @@ public class Paciente {
 	public void setCodigoIess(String codigoIess) {
 		this.codigoIess = codigoIess;
 	}
-	public String getEstatura() {
-		return estatura;
-	}
-	public void setEstatura(String estatura) {
-		this.estatura = estatura;
-	}
-	public String getPeso() {
-		return peso;
-	}
-	public void setPeso(String peso) {
-		this.peso = peso;
-	}
+
 	public String getGenero() {
 		return genero;
 	}
@@ -108,6 +97,19 @@ public class Paciente {
 	}
 	public void setCitasMedicas(List<CitaMedica> citasMedicas) {
 		this.citasMedicas = citasMedicas;
+	}
+	
+	public Double getEstatura() {
+		return estatura;
+	}
+	public void setEstatura(Double estatura) {
+		this.estatura = estatura;
+	}
+	public Double getPeso() {
+		return peso;
+	}
+	public void setPeso(Double peso) {
+		this.peso = peso;
 	}
 	@Override
 	public String toString() {

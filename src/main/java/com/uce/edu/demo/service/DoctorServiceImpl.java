@@ -14,5 +14,25 @@ public class DoctorServiceImpl implements IDoctorService{
 		// TODO Auto-generated method stub
 		this.doctorRepo.insertar(doctor);
 	}
+	@Override
+	public Doctor buscar(String cedula) {
+		// TODO Auto-generated method stub
+		return this.doctorRepo.buscar(cedula);
+	}
+	@Override
+	public Doctor buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return this.doctorRepo.buscar(id);
+	}
+	@Override
+	public void eliminar(Integer id) {
+		// TODO Auto-generated method stub
+		this.doctorRepo.eliminar(id);
+	}
+	@Override
+	public void actualizar(Doctor doctor) {
+		// TODO Auto-generated method stub
+		this.doctorRepo.actualizar(doctor);
+	}
 
 }

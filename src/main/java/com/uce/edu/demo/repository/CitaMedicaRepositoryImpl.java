@@ -49,11 +49,25 @@ public class CitaMedicaRepositoryImpl implements ICitaMedicaRepository {
 		// TODO Auto-generated method stub
 
 		TypedQuery<CitaSencilla> miQuery = this.entityManager.createQuery(
-				"SELECT NEW com.uce.edu.demo.repository.modelo.CitaSencilla(c.numero,c.fechaCita,c.valorCita,c.fechaControl)FROM CitaMedica c WHERE c.fechaCita>=fecha AND c.valorCita>=costo",
+				"SELECT NEW com.uce.edu.demo.repository.modelo.CitaSencilla(c.numero,c.fechaCita,c.valorCita,c.fechaControl)FROM CitaMedica c WHERE c.fechaCita>:fecha AND c.valorCita>:costo",
 				CitaSencilla.class);
 		miQuery.setParameter("fecha", fecha);
 		miQuery.setParameter("costo", costo);
 		return miQuery.getResultList();
+	}
+
+	@Override
+	public CitaMedica buscar(Integer id) {
+		// TODO Auto-generated method stub
+	
+		return this.entityManager.find(CitaMedica.class, id);
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		// TODO Auto-generated method stub
+		CitaMedica cm=this.buscar(id);
+		this.entityManager.remove(cm);
 	}
 
 }
